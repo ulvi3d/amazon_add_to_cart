@@ -26,7 +26,7 @@ class amazon():
         driver.find_element(By.XPATH, "(//span[@class='a-dropdown-label'])[1]").click()
         driver.find_element(By.XPATH, "(//a[normalize-space()='Newest Arrivals'])[1]").click()
 
-        # select second product from the list
+        # select first product from the list
         driver.find_element(By.PARTIAL_LINK_TEXT, "ASUS").click()
 
         # change the delivery country to US
