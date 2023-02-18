@@ -40,10 +40,11 @@ class amazon():
         # add to cart
         driver.find_element(By.XPATH, "//input[@id='add-to-cart-button']").click()
         driver.find_element(By.XPATH, "//input[@aria-labelledby='attachSiNoCoverage-announce']").click()
+        time.sleep(1)
         driver.refresh()
         driver.find_element(By.XPATH, "//span[normalize-space()='Cart']").click()
 
-        time.sleep(2)
+        time.sleep(3)
 
 start_test = amazon()
 start_test.add_to_cart()
