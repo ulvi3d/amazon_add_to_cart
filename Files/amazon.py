@@ -43,7 +43,7 @@ class amazon():
         driver.refresh()
         driver.find_element(By.XPATH, "//span[normalize-space()='Cart']").click()
 
-        time.sleep(3)
+        time.sleep(2)
 
 start_test = amazon()
 start_test.add_to_cart()
