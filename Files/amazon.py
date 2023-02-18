@@ -10,7 +10,7 @@ class amazon():
     def add_to_cart(self):
         s = Service("D:\Drivers\chromedriver.exe")
         driver = webdriver.Chrome(service=s)
-        driver.implicitly_wait(3)
+        driver.implicitly_wait(10)
 
         driver.get("https://www.amazon.com/")
         driver.maximize_window()
@@ -28,23 +28,19 @@ class amazon():
 
         # select second product from the list
         driver.find_element(By.PARTIAL_LINK_TEXT, "ASUS").click()
-        time.sleep(3)
 
         # change the delivery country to US
         driver.find_element(By.ID, "contextualIngressPtPin").click()
         dropdown = driver.find_element(By.XPATH, "//span[@id='GLUXCountryValue']")
         actions = ActionChains(driver)
         actions.double_click(dropdown).perform()
-        time.sleep(1)
         driver.find_element(By.ID, "GLUXCountryList_234").click()
         driver.refresh()
 
         # add to cart
         driver.find_element(By.XPATH, "//input[@id='add-to-cart-button']").click()
         driver.find_element(By.XPATH, "//input[@aria-labelledby='attachSiNoCoverage-announce']").click()
-        time.sleep(1)
         driver.refresh()
-        time.sleep(1)
         driver.find_element(By.XPATH, "//span[normalize-space()='Cart']").click()
 
         time.sleep(3)
